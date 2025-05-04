@@ -74,20 +74,20 @@ class Home extends StatelessWidget {
         //   child: Text("Text Button"),
         // ),
 
-        // child: GestureDetector(
-        //   onTap: (){
-        //     print("Single Tapped");
-        //   },
-        //   onDoubleTap: (){
-        //     print("Double Tapped");
-        //   },
-        //   child: Image.asset(
-        //     "assets/Image/01.jpeg",
-        //     width: 300,
-        //     height: 400,
-        //     fit: BoxFit.cover,
-        //   ),
-
+        child: GestureDetector(
+          onTap: (){
+            print("Single Tapped");
+          },
+          onDoubleTap: (){
+            print("Double Tapped");
+          },
+          child: Image.asset(
+            "assets/Image/01.jpeg",
+            width: 300,
+            height: 400,
+            fit: BoxFit.cover,
+          ),
+        )
        //  child: InkWell(
        //     onTap: (){
        //        print("Single Tapped");
