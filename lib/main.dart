@@ -88,16 +88,16 @@ class Home extends StatelessWidget {
       //     )
       //   ],
 
-      body: ListView.builder(
-        itemCount: 1000,
-        itemBuilder: (context, index){
-          return SizedBox(
-            width: 100,
-            height: 100,
-            child: Text(index.toString()),
-          );
-        },
-      ),
+      // body: ListView.builder(
+      //   itemCount: 1000,
+      //   itemBuilder: (context, index){
+      //     return SizedBox(
+      //       width: 100,
+      //       height: 100,
+      //       child: Text(index.toString()),
+      //     );
+      //   },
+      // ),
 
 
 
