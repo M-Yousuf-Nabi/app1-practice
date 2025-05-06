@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,90 +18,42 @@ class IntroApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({super.key});
+class Home extends StatefulWidget {
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  List<String> FriendList = [
+    "Abir",
+    "Abed",
+    "Imtiaj",
+    "Mehraj",
+    "Asad",
+    "Abul",
+  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.blue,
         title: Text("Menu"),
+        backgroundColor: Colors.blue,
       ),
-      // body:  ListView(
-      //   scrollDirection: Axis.vertical,
-      //   children: [
-      //     SizedBox(
-      //       height: 150,
-      //       width: 150,
-      //       child: Center(
-      //         child: Text("Box 1"),
-      //       )
-      //     ),
-      //     SizedBox(
-      //         height: 200,
-      //         width: 200,
-      //         child: Center(
-      //           child: Text("Box 1"),
-      //         )
-      //     ),
-      //     SizedBox(
-      //         height: 200,
-      //         width: 200,
-      //         child: Center(
-      //           child: Text("Box 1"),
-      //         )
-      //     ),
-      //     SizedBox(
-      //         height: 200,
-      //         width: 200,
-      //         child: Center(
-      //           child: Text("Box 1"),
-      //         )
-      //     ),SizedBox(
-      //         height: 150,
-      //         width: 150,
-      //         child: Center(
-      //           child: Text("Box 1"),
-      //         )
-      //     ),
-      //     SizedBox(
-      //         height: 200,
-      //         width: 200,
-      //         child: Center(
-      //           child: Text("Box 1"),
-      //         )
-      //     ),
-      //     SizedBox(
-      //         height: 200,
-      //         width: 200,
-      //         child: Center(
-      //           child: Text("Box 1"),
-      //         )
-      //     ),
-      //     SizedBox(
-      //         height: 200,
-      //         width: 200,
-      //         child: Center(
-      //           child: Text("Box 1"),
-      //         )
-      //     )
-      //   ],
-
-      // body: ListView.builder(
-      //   itemCount: 1000,
-      //   itemBuilder: (context, index){
-      //     return SizedBox(
-      //       width: 100,
-      //       height: 100,
-      //       child: Text(index.toString()),
-      //     );
-      //   },
-      // ),
-
-
-
+      body: ListView.builder(
+        //scrollDirection: Axis.horizontal,
+        itemCount: FriendList.length,
+        itemBuilder: (context, index){
+          return SizedBox(
+            width: 100,
+            height: 100,
+            child: Center(
+              child: Text(FriendList[index]),
+            )
+          );
+        },
+      ),
     );
   }
 }
