@@ -43,64 +43,44 @@ class _HomeState extends State<Home> {
           title: Text("Menu"),
           backgroundColor: Colors.blue,
         ),
-        body: ListView.separated(
-          //scrollDirection: Axis.horizontal,
-          itemCount: FriendList.length,
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text(
-                FriendList[index],
-                style: TextStyle(
-                  fontSize: 40,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              subtitle: Text("University Friend"),
-              trailing: Column(
+        body:
+            Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(
-                    Icons.account_box,
-                    color: Colors.green,
-                    size: 20,
+                children:[ Container(
+                  width: 150,
+                  height: 150,
+                  //color: Colors.red,
+                  //padding: EdgeInsets.all(20),
+                  margin: EdgeInsets.all(20),
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      border: Border.all(color: Colors.green,  width: 4 ),
+                      //borderRadius: BorderRadius.circular(50),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(50),
+                        bottomRight: Radius.circular(50)
+                      ),
+                    //shape: BoxShape.circle,
+                    image: DecorationImage(
+                        image: AssetImage("assets/Image/01.jpeg"),
+                      fit: BoxFit.cover,
+                    )
                   ),
-                  Text("Active"),
-                ],
+                  child: Text("Sample 1"),
+                ),
+                  Container(
+                    width: 150,
+                    height: 150,
+                    color: Colors.red,
+                    padding: EdgeInsets.all(20),
+                    margin: EdgeInsets.all(20),
+                  ),
+                ]
               ),
-              leading: Text((index + 1).toString()),
-              onTap: () {
-                print("${index + 1} item tapped");
-              },
-              tileColor: Colors.black12,
-            );
-          },
-          separatorBuilder: (context, index) {
-            return Divider(
-              height: 20,
-              color: Colors.grey,
-              thickness: 5,
-              endIndent: 10,
-            );
-          },
-        )
-        // body: GridView.builder(
-        //   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //     crossAxisCount: 3,
-        //     crossAxisSpacing: 10,
-        //     mainAxisSpacing: 5,
-        //     childAspectRatio: 1,
-        //   ),
-        //   itemCount: FriendList.length,
-        //   itemBuilder: (context, index) {
-        //     return SizedBox(
-        //         width: 100,
-        //         height: 100,
-        //         child: Center(
-        //           child: Text(FriendList[index]),
-        //         ));
-        //   },
-        //
-        // ),
-        );
+            )
+    );
   }
 }
