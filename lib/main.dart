@@ -43,12 +43,12 @@ class _HomeState extends State<Home> {
           title: Text("Menu"),
           backgroundColor: Colors.blue,
         ),
-        body:
-            Center(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children:[ Container(
+        body: Center(
+          child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
                   width: 150,
                   height: 150,
                   //color: Colors.red,
@@ -57,32 +57,74 @@ class _HomeState extends State<Home> {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                       color: Colors.red,
-                      border: Border.all(color: Colors.green,  width: 4 ),
+                      border: Border.all(color: Colors.green, width: 4),
                       //borderRadius: BorderRadius.circular(50),
                       borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(50),
-                        bottomRight: Radius.circular(50)
-                      ),
-                    //shape: BoxShape.circle,
-                    image: DecorationImage(
+                          topLeft: Radius.circular(50),
+                          bottomRight: Radius.circular(50)),
+                      //shape: BoxShape.circle,
+                      image: DecorationImage(
                         image: AssetImage("assets/Image/01.jpeg"),
-                      fit: BoxFit.cover,
-                    )
-                  ),
+                        fit: BoxFit.cover,
+                      ),
+                      boxShadow: <BoxShadow>[
+                        BoxShadow(
+                            color: Colors.black12.withOpacity(0.5),
+                            spreadRadius: 10,
+                            blurRadius: 10,
+                            offset: Offset(10, 0))
+                      ]),
                   child: Text("Sample 1"),
                 ),
-                  Container(
-                    width: 150,
-                    height: 150,
-                    color: Colors.red,
-                    padding: EdgeInsets.all(20),
-                    margin: EdgeInsets.all(20),
-                  ),
-                ]
+                Container(
+                  width: 150,
+                  height: 150,
+                  color: Colors.red,
+                  padding: EdgeInsets.all(20),
+                  margin: EdgeInsets.all(20),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    // print("Button pressed");
+                    // showAboutDialog(
+                    //     context: context,
+                    //     applicationName: "Sample",
+                    //     applicationVersion: "1.2.33",
+                    // );
+                    showDialog(context: context, builder: (ctx){
+                      return AlertDialog(
+                        title: Text("Sample"),
+                        content: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text("Hello World"),
+                            Text("Hello World"),
+                            Text("Hello World"),
+                            Text("Hello World"),
+                          ],
+                        ),
+                        actions: [
+                          TextButton(onPressed: (){
+                            Navigator.pop(context);
+                          },
+                          child: Text("Cancel")
+                          ),
+                          TextButton(onPressed: (){
+                            Navigator.pop(context);
+                          },
+                          child: Text("Okay")
+                          )
+                        ],
+                      );
+                    }
+                    );
+                  },
+                  child: Text("Dialog"),
+                ),
 
-
-              ),
-            )
-    );
+              ]
+          ),
+        ));
   }
 }
